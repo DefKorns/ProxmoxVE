@@ -26,7 +26,7 @@ METHOD=""
 NSAPP="debian12vm"
 var_os="debian"
 var_version="12"
-DISK_SIZE="8G"
+DISK_SIZE="64G"
 
 YW=$(echo "\033[33m")
 BL=$(echo "\033[36m")
@@ -439,7 +439,7 @@ qm set $VMID \
   -scsi0 ${DISK1_REF},${DISK_CACHE}${THIN}size=2G \
   -boot order=scsi0 \
   -serial0 socket >/dev/null
-qm resize $VMID scsi0 8G >/dev/null
+qm resize $VMID scsi0 64G >/dev/null
 qm set $VMID --agent enabled=1 >/dev/null
 
   DESCRIPTION=$(cat <<EOF
